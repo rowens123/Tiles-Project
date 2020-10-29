@@ -22,7 +22,7 @@ public class TileManager {
         list.add(rect);
     }
 
-    // draws all Tiles using Drawing Panel
+    // draws all Tiles using Drawing Panel param: Graphics 
 
     public void drawAll(Graphics g) {
         for (Tile t : list) {
@@ -31,7 +31,7 @@ public class TileManager {
     }
 
     // takes the top most tile the user selects and moves it all the way to the front of list
-
+    // params: pixel value as an int of users cursor position
     public void raise(int x, int y) {
         Tile t = doesTouch(x, y);
         if (t != null) {
@@ -40,6 +40,7 @@ public class TileManager {
     }
 
     // takes the top most tile the user selects and moves it all the way to the back of list
+    // params: pixel value as an int of users cursor position
 
     public void lower(int x, int y) {
         Tile t = doesTouch(x,y);
@@ -48,13 +49,16 @@ public class TileManager {
         }   
     }
 
-    // takes the top most tile the user selects and removes it from list
+    // takes the top most tile the user selects and removes it from list params: pixel value as an
+    // int of users cursor position
+
 
     public void delete(int x, int y) {
         doesTouch(x,y);       
     }
 
-    // removes all tiles that are on the pixel of the user's cursor
+    // removes all tiles that are on the pixel of the user's cursor params: pixel value as an int
+    // of users cursor position
 
     public void deleteAll(int x, int y) {
         Boolean b = true;
@@ -66,7 +70,8 @@ public class TileManager {
         }
     }
 
-    // shuffles list order using Collections and randomly changes XY position
+    // shuffles list order using Collections and randomly changes XY position params: total width
+    // height of screen
 
     public void shuffle(int width, int height) {
         Random rand = new Random();
